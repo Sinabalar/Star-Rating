@@ -30,7 +30,7 @@ export default function StarRating
          className = '',
          messages = [],
          defaultRating = 0,
-         onRate,
+         onRate = null,
 
      }) {
 
@@ -38,7 +38,7 @@ export default function StarRating
 
     function handelRating(rating) {
         setRating(rating + 1);
-        onRate(rating);
+        onRate && onRate(rating);
     }
 
     const [tempRating, setTempRating] = useState(0);
